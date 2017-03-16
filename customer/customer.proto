@@ -4,9 +4,9 @@ package customer;
 // The customer service definition
 service Customer {
 	// Get all Customers with filter - A server-to-client streaming RPC.
-	rcp GetCustomers (CustomerFilter) returns (stream CustomerRequest) {}
+	rpc GetCustomers (CustomerFilter) returns (stream CustomerRequest) {}
 	// Create a new Customer - A simple RPC
-	rcp CreateCustomer (CustomerRequest) returns (CustomerResponse) {}
+	rpc CreateCustomer (CustomerRequest) returns (CustomerResponse) {}
 }
 
 // Request message for creating a new Customer
@@ -21,7 +21,7 @@ message CustomerRequest {
 		string city = 2;
 		string state = 3;
 		string zip = 4;
-		bool is ShippingAddress = 5;
+		bool isShippingAddress = 5;
 	}
 
 	repeated Address addresses = 5;
